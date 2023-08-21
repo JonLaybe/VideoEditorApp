@@ -11,6 +11,10 @@
 ## About
 Программа для сохранения, простотра видео файлов и создание клипов. Программа преднозначена для бизнеса. Компаниям которые видут отчетность записями видео, программа предоставляет возможности: сохранения видео файлов, просмотра(видео файлов, краткой информации о видео файлах), созданных клипов, настройка по дням автоматического удаления видео фрагментов.
 ## Photo
+<img src="Images/MainPage.png" alt="MainPage" width="500px">
+<img src="Images/SelectedPage.png" alt="SelectedPage" width="500px">
+<img src="Images/CreateClipPage.png" alt="CreateClipPage" width="500px">
+
 ## Documentation
 
 Documentation
