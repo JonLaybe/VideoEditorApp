@@ -35,7 +35,7 @@ namespace VideoEditor.mvvm.ViewModel
 			_dispatcher = Dispatcher.CurrentDispatcher;
 			FileLifetime fileLifetime = new FileLifetime();
 			MainPack mainPack = MainPackSetting.GetPack().FillPack();
-			_generalModel = new GeneralModelNotify<ClipTable>(ContextModelDataBase.GetContextModelDataBase().ElementAt("Test"));
+			_generalModel = new GeneralModelNotify<ClipTable>(ContextModelDataBase.GetContextModelDataBase().ElementAt("DatabaseVideo"));
 			_generalModel.CreateTable();
 			fileLifetime.AppendNotify(_generalModel);
 			

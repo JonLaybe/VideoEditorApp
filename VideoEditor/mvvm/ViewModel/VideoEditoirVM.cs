@@ -48,7 +48,7 @@ namespace VideoEditor.mvvm.ViewModel
 			_visibilitySaveForm = Visibility.Hidden;
 			_videoProcessing = new VideoProcessing(_mainVideo);
 
-			_generalModel = new GeneralModelNotify<ClipTable>(ContextModelDataBase.GetContextModelDataBase().ElementAt("Test"));
+			_generalModel = new GeneralModelNotify<ClipTable>(ContextModelDataBase.GetContextModelDataBase().ElementAt("DatabaseVideo"));
 			_generalModel.CreateTable();
 
 			StartFrame = 0;
