@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\OpenCvSharp4.runtime.win.4.8.0.20230708\build\net48\OpenCvSharp4.runtime.win.props" Condition="Exists('..\packages\OpenCvSharp4.runtime.win.4.8.0.20230708\build\net48\OpenCvSharp4.runtime.win.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE359553-319F-40C2-93FA-AEBEA159CA0E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VideoEditor</RootNamespace>
+    <AssemblyName>VideoEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Data.Sqlite, Version=7.0.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Sqlite.Core.7.0.8\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp4.4.8.0.20230708\lib\net48\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.WpfExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp4.WpfExtensions.4.8.0.20230708\lib\net48\OpenCvSharp.WpfExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=2.1.4.1835, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_e_sqlite3.2.1.4\lib\net461\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=2.1.4.1835, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.core.2.1.4\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=2.1.4.1835, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.provider.dynamic_cdecl.2.1.4\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="mvvm\Model\AdapterClipTableToVideoFile.cs" />
+    <Compile Include="mvvm\Model\AdapterVideoTableToVideoFile.cs" />
+    <Compile Include="mvvm\Model\ChangePage\Interface\IPages.cs" />
+    <Compile Include="mvvm\Model\ChangePage\Pages.cs" />
+    <Compile Include="mvvm\Model\ConvertBitmapImage.cs" />
+    <Compile Include="mvvm\Model\Db\WorkingWithDataBase\ContextModelDataBase.cs" />
+    <Compile Include="mvvm\Model\Db\WorkingWithDataBase\GeneralModelNotify.cs" />
+    <Compile Include="mvvm\Model\Db\WorkingWithDataBase\Interface\IContextModelDataBase.cs" />
+    <Compile Include="mvvm\Model\Db\WorkingWithDataBase\Table\ClipTable.cs" />
+    <Compile Include="mvvm\Model\Enums\Themes.cs" />
+    <Compile Include="mvvm\Model\FileProcessing\Interface\IFileProcessing.cs" />
+    <Compile Include="mvvm\Model\FileProcessing\VideoProcessing.cs" />
+    <Compile Include="mvvm\Model\Settings\MainSettings\CountLifetimeSetting.cs" />
+    <Compile Include="mvvm\Model\Settings\MainSettings\ThemeSetting.cs" />
+    <Compile Include="mvvm\Model\WorkingForm\Form.cs" />
+    <Compile Include="mvvm\Model\WorkingForm\UsingForms.cs" />
+    <Compile Include="mvvm\Model\WorkingWithFile\AdapterFile.cs" />
+    <Compile Include="mvvm\Model\WorkingWithFile\AdapterGeneralFile.cs" />
+    <Compile Include="mvvm\Model\AppTheme.cs" />
+    <Compile Include="mvvm\Model\ChangePage\IChangePage.cs" />
+    <Compile Include="mvvm\Model\ChangePage\ChangeMainPage.cs" />
+    <Compile Include="mvvm\Model\CheckingDirectoryAndFile\CheckingDirectory\DefaultOperationsDir.cs" />
+    <Compile Include="mvvm\Model\CheckingDirectoryAndFile\CheckingFile\DefaultOperationsFile.cs" />
+    <Compile Include="mvvm\Model\CheckingDirectoryAndFile\DefaultOperations.cs" />
+    <Compile Include="mvvm\Model\Db\CommandDb.cs" />
+    <Compile Include="mvvm\Model\Db\ConnactDb.cs" />
+    <Compile Include="mvvm\Model\Db\ContextDataBase.cs" />
+    <Compile Include="mvvm\Model\Db\WorkingWithDataBase\GeneralModel.cs" />
+    <Compile Include="mvvm\Model\Db\WorkingWithDataBase\GeneralTable.cs" />
+    <Compile Include="mvvm\Model\Settings\MainSettings\DefaultDirectory.cs" />
+    <Compile Include="mvvm\Model\Settings\DefaultFiles.cs" />
+    <Compile Include="mvvm\Model\Settings\Interfaces\ISettings.cs" />
+    <Compile Include="mvvm\Model\Settings\ConfigPack.cs" />
+    <Compile Include="mvvm\Model\Settings\MainPack.cs" />
+    <Compile Include="mvvm\Model\Settings\MainPackSetting.cs" />
+    <Compile Include="mvvm\Model\Settings\Setting.cs" />
+    <Compile Include="mvvm\Model\WidthConverter.cs" />
+    <Compile Include="mvvm\Model\WorkingWithFile\Files\Video\VideoFile.cs" />
+    <Compile Include="mvvm\Model\WorkingWithFile\GeneralFile.cs" />
+    <Compile Include="mvvm\Model\WorkingWithFile\Interface\IFunctionSaveFile.cs" />
+    <Compile Include="mvvm\Model\WorkingWithFile\Interface\IFunctionImportFile.cs" />
+    <Compile Include="mvvm\Model\Db\WorkingWithDataBase\Table\VideoTable.cs" />
+    <Compile Include="mvvm\Model\WorkingWithFile\Interface\INotifyDeleteFile.cs" />
+    <Compile Include="mvvm\Model\WorkingWithFile\Lifetime\FileLifetime.cs" />
+    <Compile Include="mvvm\Utilites\ButtonCommand.cs" />
+    <Compile Include="mvvm\Utilites\ViewModelBase.cs" />
+    <Compile Include="mvvm\ViewModel\AppearanceSettingsPageVM.cs" />
+    <Compile Include="mvvm\ViewModel\ListClipPageVM.cs" />
+    <Compile Include="mvvm\ViewModel\MainSettingsPageVM.cs" />
+    <Compile Include="mvvm\ViewModel\ShowVideoPageVM.cs" />
+    <Compile Include="mvvm\ViewModel\ListVideoPageVM.cs" />
+    <Compile Include="mvvm\ViewModel\MainPageVM.cs" />
+    <Compile Include="mvvm\ViewModel\MainWindowVM.cs" />
+    <Compile Include="mvvm\ViewModel\VideoEditoirVM.cs" />
+    <Compile Include="mvvm\ViewModel\VideoPropertyWindowVM.cs" />
+    <Compile Include="mvvm\View\AppearanceSettingsPage.xaml.cs">
+      <DependentUpon>AppearanceSettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="mvvm\View\ListClipPage.xaml.cs">
+      <DependentUpon>ListClipPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="mvvm\View\MainSettingsPage.xaml.cs">
+      <DependentUpon>MainSettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="mvvm\View\ShowVideoPage.xaml.cs">
+      <DependentUpon>ShowVideoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="mvvm\View\ListVideoPage.xaml.cs">
+      <DependentUpon>ListVideoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="mvvm\View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="mvvm\View\VideoEditorPage.xaml.cs">
+      <DependentUpon>VideoEditorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="mvvm\View\VideoPropertyWindow.xaml.cs">
+      <DependentUpon>VideoPropertyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Style\IconButton.cs" />
+    <Compile Include="Style\ListBoxFiles.cs" />
+    <Compile Include="Style\MenuItem.cs" />
+    <Compile Include="Style\MenuItemButton.cs" />
+    <Compile Include="UserControls\MediaElementControl.xaml.cs">
+      <DependentUpon>MediaElementControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PropertyFormFile.xaml.cs">
+      <DependentUpon>PropertyFormFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SliderCropControl.xaml.cs">
+      <DependentUpon>SliderCropControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SliderVideo.xaml.cs">
+      <DependentUpon>SliderVideo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VideoPlayerControl.xaml.cs">
+      <DependentUpon>VideoPlayerControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="mvvm\Utilites\DataTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="mvvm\View\AppearanceSettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="mvvm\View\ListClipPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="mvvm\View\MainSettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="mvvm\View\ShowVideoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="mvvm\View\ListVideoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="mvvm\View\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="mvvm\View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mvvm\View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="mvvm\View\VideoEditorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="mvvm\View\VideoPropertyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\DefaultButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\InputStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\SliderStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Themes\Dark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Themes\Light.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MediaElementControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PropertyFormFile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SliderCropControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SliderVideo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\VideoPlayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\OpenCvSharp4.runtime.win.4.8.0.20230708\build\net48\OpenCvSharp4.runtime.win.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCvSharp4.runtime.win.4.8.0.20230708\build\net48\OpenCvSharp4.runtime.win.props'))" />
+  </Target>
+</Project>

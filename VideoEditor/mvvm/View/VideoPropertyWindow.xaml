@@ -1,0 +1,59 @@
+﻿<Window x:Class="VideoEditor.mvvm.View.VideoPropertyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VideoEditor.mvvm.View"
+        xmlns:VM="clr-namespace:VideoEditor.mvvm.ViewModel"
+        mc:Ignorable="d"
+        Title="Video proprty" Height="470" Width="350" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <VM:VideoPropertyWindowVM/>
+    </Window.DataContext>
+    
+    <Grid Background="{DynamicResource Backdrop}">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <DockPanel LastChildFill="False">
+                    <Image Source="{Binding MainVideoFile.PreviewVideo}" Width="100" Height="100" DockPanel.Dock="Left"/>
+                    <DockPanel DockPanel.Dock="Top">
+                        <Label Content="Имя файла" Foreground="{DynamicResource Text}" VerticalAlignment="Center"
+                               FontSize="{DynamicResource GlobalFontSize}" DockPanel.Dock="Left"/>
+                        <TextBox Text="{Binding MainVideoFile.NameFile}" VerticalAlignment="Center" TextAlignment="Center"/>
+                    </DockPanel>
+                </DockPanel>
+            </Grid>
+            <Grid x:Name="a" Grid.Row="1">
+                <StackPanel>
+                    <DockPanel>
+                        <Label Content="Расположение" Foreground="{DynamicResource Text}" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                        <TextBlock Text="{Binding MainVideoFile.Path}" Foreground="{DynamicResource Text}" TextAlignment="Center"
+                                   TextWrapping="Wrap"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Content="Расширение файла" VerticalAlignment="Center" Foreground="{DynamicResource Text}" DockPanel.Dock="Left"/>
+                        <TextBlock Text="{Binding MainVideoFile.Extension}" TextAlignment="Center"
+                                   Foreground="{DynamicResource Text}" TextWrapping="Wrap"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Content="Время создания файла" VerticalAlignment="Center" Foreground="{DynamicResource Text}"
+                               DockPanel.Dock="Left"/>
+                        <TextBlock Text="{Binding MainVideoFile.TimeCreate}" TextAlignment="Center"
+                                   Foreground="{DynamicResource Text}" TextWrapping="Wrap"/>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Content="Время экспорта файла" VerticalAlignment="Center" Foreground="{DynamicResource Text}"
+                               DockPanel.Dock="Left"/>
+                        <TextBlock Text="{Binding MainVideoFile.TimeExport}" TextAlignment="Center"
+                                   Foreground="{DynamicResource Text}" TextWrapping="Wrap"/>
+                    </DockPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

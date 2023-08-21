@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="VideoEditor.UserControls.SliderVideo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VideoEditor.UserControls"
+             mc:Ignorable="d" d:DesignWidth="800" Height="25">
+    <Grid>
+        <Slider x:Name="slider" Style="{DynamicResource Horizontal_Slider}" IsMoveToPointEnabled="True" ValueChanged="slider_ValueChanged" MouseLeftButtonUp="slider_MouseLeftButtonUp"/>
+    </Grid>
+</UserControl>

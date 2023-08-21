@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="Header" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="Backdrop" Color="#EDEEF0"/>
+    <SolidColorBrush x:Key="Text" Color="#1c1b21"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="LightGray"/>
+    <SolidColorBrush x:Key="ColorSelectedItemBrush" Color="#E5E7EB"/>
+    <SolidColorBrush x:Key="BackgroundTextBoxInputBrush" Color="#F2F3F5"/>
+    <SolidColorBrush x:Key="TextColorTextBoxInputBrush" Color="#828282"/>
+    <SolidColorBrush x:Key="BorderTextBoxInputBrush" Color="#d7d8d9"/>
+    <sys:Double xmlns:sys="clr-namespace:System;assembly=mscorlib" x:Key="GlobalFontSize">15</sys:Double>
+</ResourceDictionary>
